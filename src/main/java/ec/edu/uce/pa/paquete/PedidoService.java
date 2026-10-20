@@ -5,9 +5,9 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
-//@ApplicationScoped //Delego el control al contenedor ArC
+@ApplicationScoped //Delego el control al contenedor ArC
 //@RequestScoped //para aplicaciones web
-@Singleton 
+//@Singleton 
 public class PedidoService {
 
     @Inject 

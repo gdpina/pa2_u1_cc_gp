@@ -5,7 +5,10 @@ private String Cliente;
     private String producto;
     private double total;
     private String correo;
+    private String telefono;
+    
  
+  
     public Pedido() {
     }
  
@@ -48,6 +51,15 @@ private String Cliente;
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
    
 }
  

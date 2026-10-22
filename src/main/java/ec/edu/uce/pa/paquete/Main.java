@@ -19,7 +19,7 @@ public class Main implements QuarkusApplication {
         System.out.println("Iniciando la aplicacion Quarkus...");
 
         Pedido pedido = new Pedido("Juan Perez", "Laptop", 1500.00, "juan.perez@example.com");
- 
+        pedido.setTelefono("0999920011");
         this.pedidoService.realizar(pedido);
   
         return 0;

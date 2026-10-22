@@ -3,11 +3,13 @@ package ec.edu.uce.pa.paquete;
 import io.quarkus.arc.Unremovable;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 import jakarta.inject.Singleton;
 
 //@ApplicationScoped //Delego el control al contenedor ArC
 //@RequestScoped //para aplicaciones web
-@Singleton  
+@Singleton 
+@Named("mail") 
 public class MailService implements Notificacion {
 
 @Override

@@ -1,8 +1,10 @@
 package ec.edu.uce.pa.paquete;
 
+import jakarta.inject.Named;
 import jakarta.inject.Singleton;
 
 @Singleton 
+@Named("sms")
 public class SMSService implements Notificacion {
 
 @Override

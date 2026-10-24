@@ -15,6 +15,8 @@ import jakarta.inject.Singleton;
 //@Singleton //Su ambito es durante toda la aplicacion, es decir se crea una sola instancia de la clase y se comporta entre todos los componentes que la utilizan. 
 //@Dependent //su ambito es durante la inyeccion de dependencia , es decir se crea una instancia de la clase y se comparte entre todos los componentes que la utilizan durante la inyeccion de dependencia.
 
+//Taller 8
+
 @Singleton 
 @Named("mail") 
 public class MailService implements Notificacion {

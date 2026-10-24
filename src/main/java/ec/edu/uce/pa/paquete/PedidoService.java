@@ -1,4 +1,3 @@
-
 package ec.edu.uce.pa.paquete;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -14,11 +13,11 @@ import jakarta.inject.Singleton;
 public class PedidoService {
     @Inject 
     @Named("mail")
-    private MailService notificacionCorreo;
+    private Notificacion notificacionCorreo;
 
     @Inject 
     @Named("sms")
-    private SMSService notificacionSMS;
+    private Notificacion notificacionSMS;
 
 public void realizar(Pedido pedido){
  
@@ -34,7 +33,11 @@ public void realizar(Pedido pedido){
  
         //Notificacion de pedido por correo electronico
         this.notificacionCorreo.enviar(pedido.getCorreo(), cuerpo);
+        this.notificacionCorreo.setCantidad(this.notificacionCorreo.getCantidad() +1);
+        System.out.println("Cantidad de correos enviado: " + this.notificacionCorreo.getCantidad());
+        this.notificacionCorreo.setNombre("Correo de Pedido");
 
+        
         //Notificacion de pedido por SMS
         this.notificacionSMS.enviar(pedido.getTelefono(), cuerpo);
     }

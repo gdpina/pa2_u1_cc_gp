@@ -7,6 +7,9 @@ import jakarta.inject.Singleton;
 @Named("sms")
 public class SMSService implements Notificacion {
 
+    private Integer cantidad = 0;
+    
+
 @Override
 public void enviar(String destino, String mensaje) {
     System.out.println("Enviando SMS a: " + destino);
@@ -14,5 +17,14 @@ public void enviar(String destino, String mensaje) {
     System.out.println("SMS enviado con éxito.");
     System.out.println("Fin del envío del SMS.");
 }
+
+public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
 
 }

@@ -1,4 +1,4 @@
-package ec.edu.uce.pa.tarea2;
+package ec.edu.uce.pa.tarea4;
 
 public class PedidoBebida {
 

@@ -18,7 +18,7 @@ public class AppCocaCola implements QuarkusApplication {
         @Override
         public int run(String... args) {
 
-                System.out.println("Iniciando la aplicacion Quarkus...");
+                System.out.println("Iniciando la aplicacion Quarkus...\n");
 
                 PedidoBebida pedido = new PedidoBebida(
                                 "PED-001",

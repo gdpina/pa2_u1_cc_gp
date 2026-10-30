@@ -26,5 +26,14 @@ public Integer getCantidad() {
         this.cantidad = cantidad;
     }
 
+    @Override
+    public String getNombre() {
+       return null;
+    }
+
+    @Override
+    public void setNombre(String nombre) {
+    }
+
 
 }

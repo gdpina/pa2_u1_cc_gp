@@ -4,13 +4,15 @@ import java.lang.reflect.Parameter;
 
 import ec.edu.uce.pa.paquete.AuditoriaService;
 import ec.edu.uce.pa.paquete.Pedido;
+import jakarta.annotation.Priority;
 import jakarta.inject.Inject;
 import jakarta.interceptor.AroundInvoke;
 import jakarta.interceptor.Interceptor;
 import jakarta.interceptor.InvocationContext;
 
 @Auditoria 
-@Interceptor 
+@Interceptor
+@Priority(Interceptor.Priority.APPLICATION + 30) 
 public class AuditoriaInterceptor {
 
     @Inject 
@@ -29,7 +31,7 @@ public class AuditoriaInterceptor {
         System.out.println("Retorno: " + resultado);
         
         String nombreMetodo = context.getMethod().getName();
-        System.out.println("Auditoria -> Se esta ejecutando el método: " + nombreMetodo);
+        System.out.println("[Auditoria] -> Se esta ejecutando el método: " + nombreMetodo);
         System.out.println("Ejecuto todo lo que quiero que haga el interceptor. ");
 
         Parameter[] parametros = context.getMethod().getParameters();

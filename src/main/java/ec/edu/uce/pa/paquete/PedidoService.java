@@ -1,6 +1,9 @@
 package ec.edu.uce.pa.paquete;
 
 import ec.edu.uce.pa.paquete.interceptors.Auditoria;
+import ec.edu.uce.pa.paquete.interceptors.Mail;
+import ec.edu.uce.pa.paquete.interceptors.MedirTiempo;
+import ec.edu.uce.pa.paquete.interceptors.SMS;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.spi.CDI;
@@ -11,10 +14,12 @@ import jakarta.inject.Singleton;
 @ApplicationScoped 
 public class PedidoService {
  
-@Auditoria 
+@Auditoria //2
+@MedirTiempo //1  
+@SMS 
+@Mail 
 public String realizar(Pedido pedido, String valor1){
-        //Medir el tiempo de forma incorrecta
-        long init = System.currentTimeMillis();
+        
         try{
             Thread.sleep(1500);
         } catch(Exception e){
@@ -28,8 +33,7 @@ public String realizar(Pedido pedido, String valor1){
         System.out.println("Correo: " + pedido.getCorreo());
         System.out.println("Pedido realizado con exito.");
         
-        long fin = System.currentTimeMillis() - init;
-        return "[PedidoService] Se ha ejecutado correctamente \nTiempo de ejecucion: " + fin;
+        return "[PedidoService] Se ha ejecutado correctamente ";
   
     }
 }

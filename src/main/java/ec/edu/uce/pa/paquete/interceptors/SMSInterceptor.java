@@ -9,7 +9,7 @@ import jakarta.interceptor.AroundInvoke;
 import jakarta.interceptor.Interceptor;
 import jakarta.interceptor.InvocationContext;
 
-@MedirTiempo 
+@SMS 
 @Interceptor 
 @Priority(Interceptor.Priority.APPLICATION + 20)
 public class SMSInterceptor {

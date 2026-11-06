@@ -4,6 +4,7 @@ import java.lang.reflect.Parameter;
 
 import ec.edu.uce.pa.tarea4.PedidoBebida;
 import ec.edu.uce.pa.tarea4.SeguimientoPedidoService;
+import jakarta.annotation.Priority;
 import jakarta.inject.Inject;
 import jakarta.interceptor.AroundInvoke;
 import jakarta.interceptor.Interceptor;
@@ -11,6 +12,7 @@ import jakarta.interceptor.InvocationContext;
 
 @SeguimientoPedido
 @Interceptor
+@Priority(Interceptor.Priority.APPLICATION + 40)
 public class SeguimientoPedidoInterceptor {
 
     @Inject
@@ -25,7 +27,7 @@ public class SeguimientoPedidoInterceptor {
         System.out.println("Retorno: " + resultado);
 
         String nombreMetodo = context.getMethod().getName();
-        System.out.println("Seguimiento -> Se está ejecutando el método: " + nombreMetodo);
+        System.out.println("[Seguimiento] Se está ejecutando el método: " + nombreMetodo);
 
         Parameter[] parametros = context.getMethod().getParameters();
 

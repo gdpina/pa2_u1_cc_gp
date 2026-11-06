@@ -1,5 +1,7 @@
 package ec.edu.uce.pa.tarea4;
 
+import ec.edu.uce.pa.tarea4.interceptors.Email;
+import ec.edu.uce.pa.tarea4.interceptors.SMS;
 import ec.edu.uce.pa.tarea4.interceptors.SeguimientoPedido;
 import jakarta.enterprise.context.ApplicationScoped;
 
@@ -8,6 +10,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 public class GestionPedido {
 
     @SeguimientoPedido 
+    @Email 
+    @SMS 
     public String realizar(PedidoBebida pedido) {
 
         double subtotal = pedido.getCantidad() * pedido.getPrecioUnitario();
@@ -24,7 +28,7 @@ public class GestionPedido {
         System.out.println("---------------------------------------------------------");
 
 
-        return "Pedido realizado con éxito.";
+        return "[GestionPedido] Se ha ejecutado correctamente";
 
     }
 }
